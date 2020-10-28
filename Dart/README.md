@@ -1,6 +1,6 @@
 # Dart Roadmap
 
-**Part 1**
+## Part 1
 1. What is Programming? How does the program work? Number systems. Low-level and High-level languages. Compiler vs Interpreter. Algorithm & Flow Chart
 2. main method. Data types - **(int,double,boolean)**. **var and dynamic**. Variables. Naming conventions for Dart. RAM - **Stack** and **Heap** Memory
 3. List. **spread and null aware spread operators**. **collection-if** and **collection-for** operators
@@ -9,7 +9,7 @@
 6. **final and const**
 7. Sound Null Safety. **late**, **?**, **!** - assertion
 
-**Part 2**
+## Part 2
 1. **Arithmetic Operators**: + - * / ~/ % -expr ++expr --expr expr++ expr--
 2. **Bitwise Operators**: << >> >>> & ^ | ~
 3. **Logical and Relational Operators**: > < >= <= == != && || !expr
@@ -19,7 +19,7 @@
 7. **Assigment & Compound Assigment**: = -= += *= /= ~/= %= >>= <<= &= ^= |=
 8. **Other Operators**: () [] . /. await ***(in async part)***
 
-**Part 3**
+# Part 3
 1. if, else if and else
 2. switch and case
 3. for & for-each
@@ -27,14 +27,14 @@
 5. break and continue
 6. assert
 
-**Part 4**
+# Part 4
 1. Functions
 2. Parameters, Optional Named & Optional Positional & Required Parameters, Default Parameter Values, **@required** annotation
 3. Functions as first-class objects
 4. Anonymous Functions
 5. Lexical Scope, Lexical Closures
 
-**Part 5**
+# Part 5
 1. Classes, Class Members -instance variables & intance methods
 2. Constructors -Default, Named, Factory (No-access to **this**) Constructors
 3. **this** and **super** keywords
@@ -51,12 +51,12 @@
 14. Mixins (**on** keyword)
 15. Class variables and methods (**static**)
 
-**Part 6**
+# Part 6
 1. Generics
 2. Restricting the parameterized type
 3. Using generic methods
 
-**Part 7**
+# Part 7
 1. Using libraries - **import**
 2. Specifying a library prefix - **as**
 3. Importing only part of a library - **show** and **hide**
