@@ -19,7 +19,7 @@
 7. **Assigment & Compound Assigment**: = -= += *= /= ~/= %= >>= <<= &= ^= |=
 8. **Other Operators**: () [] . /. await ***(in async part)***
 
-# Part 3
+## Part 3
 1. if, else if and else
 2. switch and case
 3. for & for-each
@@ -27,14 +27,14 @@
 5. break and continue
 6. assert
 
-# Part 4
+## Part 4
 1. Functions
 2. Parameters, Optional Named & Optional Positional & Required Parameters, Default Parameter Values, **@required** annotation
 3. Functions as first-class objects
 4. Anonymous Functions
 5. Lexical Scope, Lexical Closures
 
-# Part 5
+## Part 5
 1. Classes, Class Members -instance variables & intance methods
 2. Constructors -Default, Named, Factory (No-access to **this**) Constructors
 3. **this** and **super** keywords
@@ -51,19 +51,19 @@
 14. Mixins (**on** keyword)
 15. Class variables and methods (**static**)
 
-# Part 6
+## Part 6
 1. Generics
 2. Restricting the parameterized type
 3. Using generic methods
 
-# Part 7
+## Part 7
 1. Using libraries - **import**
 2. Specifying a library prefix - **as**
 3. Importing only part of a library - **show** and **hide**
 4. Lazily loading a library - **deferred as** (Deferred or Lazily Loading)
 5. Implementing libraries - **export**, **part**, **part of**, **library**
 
-**Part 8**
+## Part 8
 1. Future, **async**, **await**
 2. Declaring async functions
 3. Handling Streams - **await for**
@@ -71,3 +71,15 @@
 5. Stream methods - **listen**, **onError**, **onDone*, **asBroadcastStream**
 6. **map**, **where**, **dintinct**,  in Streams
 7. Completers - returning future, **complete** & **completeError** methods
+
+## Part 9
+1. Generators - Iterable and Stream
+2. Callable Classes
+3. Typedefs
+4. Metadata
+5. Comments - **Single-line** & **Multi-line** Comments
+6. Documentation Comments
+7. Isolates (Advanced Topic) 
+    - https://codingwithjoe.com/dart-fundamentals-isolates/
+    - https://medium.com/dartlang/dart-asynchronous-programming-isolates-and-event-loops-bffc3e296a6a
+    - https://www.w3adda.com/dart-tutorial/dart-isolates
