@@ -253,3 +253,14 @@ class Rectangle extends Shape {
   clone() => Rectangle.clone(this);
 }
 ```
+
+# 5. Builder
+**Builder** is a creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+
+
+**Reading Resources**
+  - [Builder by Refactoring Guru](https://refactoring.guru/design-patterns/builder)
+  - [Flutter Design Patterns: 18 — Builder by Mangirdas Kazlauskas](https://medium.com/flutter-community/flutter-design-patterns-18-builder-cdc90b222724)
+
+
+
