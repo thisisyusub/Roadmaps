@@ -185,3 +185,71 @@ class CupertinoCheckBox extends CheckBox {
 }
 
 ```
+
+# 4. Prototype (Clone)
+**Prototype** is a creational design pattern that lets you copy existing objects without making your code dependent on their classes.
+
+**Reading Resources**
+  - [Prototype by Refactoring Guru](https://refactoring.guru/design-patterns/prototype)
+  - [Flutter Design Patterns: 14 — Prototype by Mangirdas Kazlauskas](https://medium.com/flutter-community/flutter-design-patterns-14-prototype-7d7d18bcf643)
+
+```dart
+void main() {
+  final c1 = Circle('black', 10);
+  final c2 = c1.clone() as Circle;
+​
+  print('c2 radius: ${c2.radius}');
+  print('c2 color: ${c2.color}');
+  
+  print('\n');
+​
+  final r1 = Rectangle('red', 10, 15);
+  final r2 = r1.clone() as Rectangle;
+​
+  print('r2 color: ${r2.color}');
+  print('r2 height: ${r2.height}');
+  print('r2 width: ${r2.width}');
+}
+​
+abstract class Shape {
+  String color;
+​
+  Shape(this.color);
+​
+  Shape.clone(Shape source) {
+    color = source.color;
+  }
+​
+  Shape clone();
+}
+​
+class Circle extends Shape {
+  double radius;
+​
+  Circle(String color, this.radius) : super(color);
+​
+  /// returns new object
+  Circle.clone(Circle source) : super.clone(source) {
+    radius = source.radius;
+  }
+​
+  @override
+  clone() => Circle.clone(this);
+}
+​
+class Rectangle extends Shape {
+  double height;
+  double width;
+​
+  Rectangle(String color, this.height, this.width) : super(color);
+​
+  /// returns new object
+  Rectangle.clone(Rectangle source) : super.clone(source) {
+    height = source.height;
+    width = source.width;
+  }
+​
+  @override
+  clone() => Rectangle.clone(this);
+}
+```
