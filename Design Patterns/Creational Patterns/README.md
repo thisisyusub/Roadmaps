@@ -46,7 +46,7 @@ class LazySingleton {
 }
 ```
 
-# 2. Simple Factory (Factory method or Virtual Constructor)
+# 2. Factory Method (Virtual Constructor)
 
 **Reading Resources**
   - [Factory Method by Refactoring Guru](https://refactoring.guru/design-patterns/factory-method)
