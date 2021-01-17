@@ -1,6 +1,7 @@
 ### Resource for creational patterns by [Kamran Ahmed](https://github.com/kamranahmedse/design-patterns-for-humans#creational-design-patterns)
 
 # 1. Singleton
+**Singleton** is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
 
 **Reading Resources**
 - [Flutter Design Patterns: 1 — Singleton by Mangirdas Kazlauskas](https://medium.com/flutter-community/flutter-design-patterns-1-singleton-437f04e923ce)
@@ -47,6 +48,7 @@ class LazySingleton {
 ```
 
 # 2. Factory Method (Virtual Constructor)
+**Factory Method** is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 
 **Reading Resources**
   - [Factory Method by Refactoring Guru](https://refactoring.guru/design-patterns/factory-method)
@@ -92,6 +94,7 @@ class Square implements Shape {
 ```
 
 # 3. Abstract Factory (Kit)
+**Abstract Factory** is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
 
 **Reading Resources**
   - [Abstract Factory by Refactoring Guru](https://refactoring.guru/design-patterns/abstract-factory)
