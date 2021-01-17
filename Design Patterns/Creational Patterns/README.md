@@ -1,3 +1,5 @@
+### Resource for creational patterns by [Kamran Ahmed](https://github.com/kamranahmedse/design-patterns-for-humans#creational-design-patterns)
+
 # Singleton
 
 **Reading Resources**
