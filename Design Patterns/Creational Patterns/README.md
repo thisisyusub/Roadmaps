@@ -1,3 +1,5 @@
+# Singleton
+
 **Reading Resources**
 - [Flutter Design Patterns: 1 — Singleton by Mangirdas Kazlauskas](https://medium.com/flutter-community/flutter-design-patterns-1-singleton-437f04e923ce)
 - [Singleton by Refactoring Guru](https://refactoring.guru/design-patterns/singleton)
