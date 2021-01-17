@@ -262,5 +262,155 @@ class Rectangle extends Shape {
   - [Builder by Refactoring Guru](https://refactoring.guru/design-patterns/builder)
   - [Flutter Design Patterns: 18 — Builder by Mangirdas Kazlauskas](https://medium.com/flutter-community/flutter-design-patterns-18-builder-cdc90b222724)
 
+```dart
+void main() {
+  final burgerBuilder1 = SmallBurgerBuilder();
+  final burgerBuilder2 = BigBurgerBuilder();
 
+  final burgerMaker = BurgerMaker(burgerBuilder1);
+  burgerMaker.prepareBurger();
+
+  final burger1 = burgerMaker.getBurger();
+
+  print('Burger 1');
+  burger1.printFormattedIngredients();
+  print('price: ${burger1.getFormattedPrice()}');
+  
+
+  print('\n');
+  
+  
+  burgerMaker.changeBurgerBuilder(burgerBuilder2);
+  burgerMaker.prepareBurger();
+
+  final burger2 = burgerMaker.getBurger();
+  
+  print('Burger 2');
+  burger2.printFormattedIngredients();
+  print('price: ${burger2.getFormattedPrice()}');
+}
+
+// Burger Maker
+class BurgerMaker {
+  BurgerMaker(this.burgerBuilder);
+
+  IBurgerBuilder burgerBuilder;
+
+  void changeBurgerBuilder(IBurgerBuilder burgerBuilder) {
+    this.burgerBuilder = burgerBuilder;
+  }
+
+  Burger getBurger() => burgerBuilder.getBurger();
+
+  void prepareBurger() {
+    burgerBuilder.createBurger();
+    burgerBuilder.setBurgerPrice();
+
+    burgerBuilder.addBeef();
+    burgerBuilder.addMayonnaise();
+    burgerBuilder.addOnion();
+    burgerBuilder.addCheese();
+    burgerBuilder.addKetchup();
+  }
+}
+
+/// Concrete Builders
+class BigBurgerBuilder extends IBurgerBuilder {
+  BigBurgerBuilder() {
+    price = 4.99;
+  }
+
+  void addCheese() => burger.addIngredient(Cheese());
+
+  void addBeef() => burger.addIngredient(Beef());
+
+  void addKetchup() => burger.addIngredient(Ketchup());
+
+  void addMayonnaise() => burger.addIngredient(Mayonnaise());
+
+  void addOnion() => burger.addIngredient(Onion());
+}
+
+class SmallBurgerBuilder extends IBurgerBuilder {
+  SmallBurgerBuilder() {
+    price = 2.99;
+  }
+
+  void addCheese() => burger.addIngredient(Cheese());
+
+  void addBeef() => burger.addIngredient(Beef());
+
+  void addKetchup() {
+    // Not needed
+  }
+
+  void addMayonnaise() => burger.addIngredient(Mayonnaise());
+
+  void addOnion() => burger.addIngredient(Onion());
+}
+
+/// Burger Builder Base
+abstract class IBurgerBuilder {
+  Burger burger;
+  double price;
+
+  void createBurger() {
+    burger = Burger();
+  }
+
+  Burger getBurger() => burger;
+
+  void setBurgerPrice() => burger.setPrice(price);
+
+  void addCheese();
+  void addBeef();
+  void addKetchup();
+  void addMayonnaise();
+  void addOnion();
+}
+
+/// Burger
+class Burger {
+  final List<Ingredient> _ingredients = [];
+  double _price;
+
+  void addIngredient(Ingredient ingredient) => _ingredients.add(ingredient);
+
+  void printFormattedIngredients() =>
+      print(_ingredients.map((i) => i.name).join(','));
+
+  void setPrice(double price) {
+    _price = price;
+  }
+
+  String getFormattedPrice() => '\$${_price.toStringAsFixed(2)}';
+}
+
+/// Ingredients
+abstract class Ingredient {
+  final String name;
+
+  Ingredient(this.name);
+}
+
+class Cheese extends Ingredient {
+  Cheese() : super('Cheese');
+}
+
+class Beef extends Ingredient {
+  Beef() : super('Beef');
+}
+
+class Ketchup extends Ingredient {
+  Ketchup() : super('Ketchup');
+}
+
+class Mayonnaise extends Ingredient {
+  Mayonnaise() : super('Mayonnaise');
+}
+
+class Onion extends Ingredient {
+  Onion() : super('Onion');
+}
+```
 
