@@ -90,3 +90,95 @@ class Square implements Shape {
   void draw() => print('drawing Square');
 }
 ```
+
+# 3. Abstract Factory (Kit)
+
+**Reading Resources**
+  - [Abstract Factory by Refactoring Guru](https://refactoring.guru/design-patterns/abstract-factory)
+  - [Flutter Design Patterns: 11 — Abstract Factory by Mangirdas Kazlauskas](https://medium.com/flutter-community/flutter-design-patterns-11-abstract-factory-7098112925d8)
+
+```dart
+void main() {
+  final materialFactory = MaterialFactory();
+  final materialButton = materialFactory.makeButton();
+  final materialCheckBox = materialFactory.makeCheckBox();
+
+  materialButton.onTap();
+  materialCheckBox.onTap();
+  materialCheckBox.onTap();
+
+  print('\n');
+
+  final cupertionFactory = CupertinoFactory();
+  final cupertionButton = cupertionFactory.makeButton();
+  final cupertionCheckBox = cupertionFactory.makeCheckBox();
+
+  cupertionButton.onTap();
+  cupertionCheckBox.onTap();
+  cupertionCheckBox.onTap();
+}
+
+/// Material Factory for Material Widgets
+class MaterialFactory implements WidgetsFactory {
+  @override
+  Button makeButton() => MaterialButton();
+
+  @override
+  CheckBox makeCheckBox() => MaterialCheckBox();
+}
+
+/// Cupertino Factory for Cupertino Widgets
+class CupertinoFactory implements WidgetsFactory {
+  @override
+  Button makeButton() => CupertinoButton();
+
+  @override
+  CheckBox makeCheckBox() => CupertinoCheckBox();
+}
+
+abstract class WidgetsFactory {
+  Button makeButton();
+
+  CheckBox makeCheckBox();
+}
+
+/// For Button
+abstract class Button {
+  String get title;
+
+  void onTap() => print('$title tapped!');
+}
+
+class MaterialButton extends Button {
+  @override
+  String get title => 'Material Button';
+}
+
+class CupertinoButton extends Button {
+  @override
+  String get title => 'Cupertino Button';
+}
+
+///For CheckBox
+abstract class CheckBox {
+  String get title;
+
+  bool checked = false;
+
+  void onTap() {
+    checked = !checked;
+    print('$title checked: $checked');
+  }
+}
+
+class MaterialCheckBox extends CheckBox {
+  @override
+  String get title => 'Material CheckBox';
+}
+
+class CupertinoCheckBox extends CheckBox {
+  @override
+  String get title => 'Cupertino CheckBox';
+}
+
+```
