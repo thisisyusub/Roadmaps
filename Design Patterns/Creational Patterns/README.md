@@ -1,6 +1,6 @@
 ### Resource for creational patterns by [Kamran Ahmed](https://github.com/kamranahmedse/design-patterns-for-humans#creational-design-patterns)
 
-# Singleton
+# 1. Singleton
 
 **Reading Resources**
 - [Flutter Design Patterns: 1 — Singleton by Mangirdas Kazlauskas](https://medium.com/flutter-community/flutter-design-patterns-1-singleton-437f04e923ce)
@@ -43,5 +43,50 @@ class LazySingleton {
 ​
     return _instance;
   }
+}
+```
+
+# 2. Simple Factory (Factory method or Virtual Constructor)
+
+**Reading Resources**
+  - [Factory Method by Refactoring Guru](https://refactoring.guru/design-patterns/factory-method)
+  - [Flutter Design Patterns: 10 — Factory Method by Mangirdas Kazlauskas](https://mkobuolys.medium.com/flutter-design-patterns-10-factory-method-c53ad11d863f)
+
+```dart
+void main() {
+  Shape shape = ShapeFactory.buildShape(ShapeType.circle);
+  shape.draw();
+
+  shape = ShapeFactory.buildShape(ShapeType.square);
+  shape.draw();
+}
+
+enum ShapeType { circle, square }
+
+class ShapeFactory {
+  static Shape buildShape(ShapeType shapeType) {
+    switch (shapeType) {
+      case ShapeType.circle:
+        return Circle();
+      case ShapeType.square:
+        return Square();
+      default:
+        throw FormatException('This Shape not implemented');
+    }
+  }
+}
+
+abstract class Shape {
+  void draw();
+}
+
+class Circle implements Shape {
+  @override
+  void draw() => print('drawing Circle');
+}
+
+class Square implements Shape {
+  @override
+  void draw() => print('drawing Square');
 }
 ```
