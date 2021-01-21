@@ -7,7 +7,45 @@
 - [Flutter Design Patterns: 1 — Singleton by Mangirdas Kazlauskas](https://medium.com/flutter-community/flutter-design-patterns-1-singleton-437f04e923ce)
 - [Singleton by Refactoring Guru](https://refactoring.guru/design-patterns/singleton)
 
-<script src="https://gist.github.com/yusubx/cd419b3d4b46cae00ac4fef7ccd5bf8e.js?file=gist.md"></script>
+```dart
+void main() {
+  final s1 = Singleton();
+  print('Singleton: ${s1.hashCode}');
+
+  final s2 = Singleton();
+  print('Singleton: ${s2.hashCode}\n');
+
+  final ls1 = LazySingleton();
+  print('Lazy Singleton: ${ls1.hashCode}');
+
+  final ls2 = LazySingleton();
+  print('Lazy Singleton: ${ls2.hashCode}');
+}
+
+class Singleton {
+  Singleton._();
+
+  static final _instance = Singleton._();
+
+  factory Singleton() {
+    return _instance;
+  }
+}
+
+class LazySingleton {
+  LazySingleton._();
+
+  static LazySingleton _instance;
+
+  factory LazySingleton() {
+    if (_instance == null) {
+      _instance = LazySingleton._();
+    }
+
+    return _instance;
+  }
+}
+```
 
 # 2. Factory Method (Virtual Constructor)
 **Factory Method** is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
