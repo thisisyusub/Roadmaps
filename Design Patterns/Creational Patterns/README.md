@@ -1,6 +1,8 @@
 ### Resource for creational patterns by [Kamran Ahmed](https://github.com/kamranahmedse/design-patterns-for-humans#creational-design-patterns)
 
-# 1. Singleton ([tap tu run code](https://dartpad.dev/cd419b3d4b46cae00ac4fef7ccd5bf8e?))
+<span style="color:red"> You can tap Patterns' names to open [dartpad.dev](dartpad.dev) to run code.</span>
+
+# [1. Singleton](https://dartpad.dev/cd419b3d4b46cae00ac4fef7ccd5bf8e?)
 **Singleton** is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
 
 **Reading Resources**
@@ -47,7 +49,7 @@ class LazySingleton {
 }
 ```
 
-# 2. Factory Method (Virtual Constructor)
+# 2. [Factory Method (Virtual Constructor)](https://dartpad.dev/cd4b2a0772554d7947c0f6347a9bbf19?)
 **Factory Method** is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 
 **Reading Resources**
@@ -94,7 +96,7 @@ class Square implements Shape {
 }
 ```
 
-# 3. Abstract Factory (Kit)
+# [3. Abstract Factory (Kit)](https://dartpad.dev/d1db00700c73c8c95eae2bd40ee0589e?)
 **Abstract Factory** is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
 
 **Reading Resources**
@@ -184,10 +186,9 @@ class CupertinoCheckBox extends CheckBox {
   @override
   String get title => 'Cupertino CheckBox';
 }
-
 ```
 
-# 4. Prototype (Clone)
+# [4. Prototype (Clone)](https://dartpad.dev/374b2282611c21415e94513def6d8995?)
 **Prototype** is a creational design pattern that lets you copy existing objects without making your code dependent on their classes.
 
 **Reading Resources**
@@ -198,64 +199,64 @@ class CupertinoCheckBox extends CheckBox {
 void main() {
   final c1 = Circle('black', 10);
   final c2 = c1.clone() as Circle;
-​
+
   print('c2 radius: ${c2.radius}');
   print('c2 color: ${c2.color}');
   
   print('\n');
-​
+
   final r1 = Rectangle('red', 10, 15);
   final r2 = r1.clone() as Rectangle;
-​
+
   print('r2 color: ${r2.color}');
   print('r2 height: ${r2.height}');
   print('r2 width: ${r2.width}');
 }
-​
+
 abstract class Shape {
   String color;
-​
+
   Shape(this.color);
-​
+
   Shape.clone(Shape source) {
     color = source.color;
   }
-​
+
   Shape clone();
 }
-​
+
 class Circle extends Shape {
   double radius;
-​
+
   Circle(String color, this.radius) : super(color);
-​
+
   /// returns new object
   Circle.clone(Circle source) : super.clone(source) {
     radius = source.radius;
   }
-​
+
   @override
   clone() => Circle.clone(this);
 }
-​
+
 class Rectangle extends Shape {
   double height;
   double width;
-​
+
   Rectangle(String color, this.height, this.width) : super(color);
-​
+
   /// returns new object
   Rectangle.clone(Rectangle source) : super.clone(source) {
     height = source.height;
     width = source.width;
   }
-​
+
   @override
   clone() => Rectangle.clone(this);
 }
 ```
 
-# 5. Builder
+# [5. Builder](https://dartpad.dev/3fcdd83b843dcf614b378875897e13f1?)
 **Builder** is a creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
 
 
