@@ -7,8 +7,7 @@
 - [Flutter Design Patterns: 1 — Singleton by Mangirdas Kazlauskas](https://medium.com/flutter-community/flutter-design-patterns-1-singleton-437f04e923ce)
 - [Singleton by Refactoring Guru](https://refactoring.guru/design-patterns/singleton)
 
-
-<script src="https://gist.github.com/yusubx/cd419b3d4b46cae00ac4fef7ccd5bf8e.js"></script>
+{% gist cd419b3d4b46cae00ac4fef7ccd5bf8e gist.md %}
 
 # 2. Factory Method (Virtual Constructor)
 **Factory Method** is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
