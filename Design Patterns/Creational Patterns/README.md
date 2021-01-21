@@ -1,6 +1,6 @@
 ### Resource for creational patterns by [Kamran Ahmed](https://github.com/kamranahmedse/design-patterns-for-humans#creational-design-patterns)
 
-<span style="color:red"> You can tap Patterns' names to open [dartpad.dev](dartpad.dev) to run code.</span>
+> ## You can tap Patterns' names to open [dartpad.dev](dartpad.dev) to run code
 
 # [1. Singleton](https://dartpad.dev/cd419b3d4b46cae00ac4fef7ccd5bf8e?)
 **Singleton** is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
